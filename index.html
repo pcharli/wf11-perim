@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/icons/favicon.ico">
+    <meta name="theme-color" content="#B12A34">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <ul>
+            <li v-for="(product, key) in products">{{ product.label}} périmé le {{ $filters.dateFr(product.echeance) }}</li>
+        </ul>
+        <p v-if="the_statut">Rechargée</p>
+        <button class="install">Installer</button>
+    </div>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
+    <script src="install.js"></script>
+    <script src="register-sw.js"></script>
+</body>
+</html>
